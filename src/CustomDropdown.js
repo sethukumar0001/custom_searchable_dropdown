@@ -250,18 +250,22 @@ const CustomSearchableDropdown = (props) => {
           </div>
           <div className="right_container">
             {valueLabel && (
+              <div className="close_image_container">
               <img
                 src={"/dropdown/close.svg"}
                 className="close_image"
                 onClick={(e) => handleClose(e)}
               />
+              </div>
             )}
+            <div className="arrow_image_container">
             <img
               src={
                 isOpen ? "/dropdown/arrow_up.svg" : "/dropdown/arrow_down.svg"
               }
               className="arrow_image"
             />
+            </div>
           </div>
         </div>
 
