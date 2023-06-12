@@ -181,7 +181,7 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   margin-top: -1px;
-  max-height: 200px;
+  max-height: 235px;
   overflow-y: auto;
   position: absolute;
   top: 100%;
@@ -267,6 +267,34 @@
     left: 17px;
   }
 }
+
+.button_container {
+  cursor: pointer;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  // padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  .button_input {
+    color: #276ef1;
+    font-weight: 500;
+    padding-left: 30px;
+  }
+  .button_image {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 12px;
+    left: 14px;
+    // left: 37%;
+
+  }
+}
 .input_close_image {
   cursor: pointer;
   position: absolute;
@@ -283,5 +311,5 @@
 .option_container {
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 }

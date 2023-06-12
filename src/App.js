@@ -13,6 +13,7 @@ function App(props) {
         label={"label"}
         value={value}
         onChange={handleSelectChange}
+        add
       />
     </div>
   );
