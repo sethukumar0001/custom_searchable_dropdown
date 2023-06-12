@@ -228,15 +228,17 @@ const CustomSearchableDropdown = (props) => {
       ? getValue(list, `[${0}].label`, "")
       : "";
   };
-  const valueLabel = useMemo(() => findSelectedPipeline(value), [
-    value,
-    getValue(data, `length`, 0) > 0,
-  ]);
+  const valueLabel = useMemo(
+    () => findSelectedPipeline(value),
+    [value, getValue(data, `length`, 0) > 0]
+  );
   return (
     <>
       <div className={"dropdownselect-form"} ref={ref}>
         <div
-          className="selected-value-box position-relative"
+          className={`selected-value-box position-relative ${
+            isOpen ? "active" : ""
+          }`}
           onClick={toggleBox} /* add custom width here */
         >
           <div>
@@ -255,7 +257,9 @@ const CustomSearchableDropdown = (props) => {
               />
             )}
             <img
-              src={isOpen ? "/dropdown/arrow_up.svg" : "/dropdown/arrow_down.svg"}
+              src={
+                isOpen ? "/dropdown/arrow_up.svg" : "/dropdown/arrow_down.svg"
+              }
               className="arrow_image"
             />
           </div>
@@ -294,6 +298,7 @@ const CustomSearchableDropdown = (props) => {
               />
             )}
           </div>
+          <div className="option_container">
           {isLoading ? (
             <div style={{ textAlign: "center" }}>
               <img src={`/dropdown/loader1.gif`} className="loader" />
@@ -301,25 +306,25 @@ const CustomSearchableDropdown = (props) => {
           ) : filter(data).length > 0 ? (
             filter(data).map((option, index) => {
               return (
-                <div>
-                  <div
-                    onClick={() => {
-                      handleClickOption(option);
-                      toggle();
-                    }}
-                    className={`option ${
-                      option.id === value ? "selected" : ""
-                    }`}
-                    key={`${id}-${index}`}
-                  >
-                    {option[label]}
-                  </div>
+                <div
+                  onClick={() => {
+                    handleClickOption(option);
+                    toggle();
+                  }}
+                  className={`option ${option.id === value ? "selected" : ""}`}
+                  key={`${id}-${index}`}
+                >
+                  <div className="selected_text">{option[label]}</div>
+                  {option.id === value && (
+                    <img src="/dropdown/done.svg" className="done_image" />
+                  )}
                 </div>
               );
             })
           ) : (
             <div className="nodata">No Data Found</div>
           )}
+          </div>
         </div>
       </div>
     </>
