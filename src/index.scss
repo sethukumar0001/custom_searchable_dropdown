@@ -65,7 +65,7 @@
         width: 18px;
       }
       &:hover {
-        background-color: #e8f0fe;
+        background-color: #ebeef8;
         border-radius: 50%;
         // transition: 0.2s ease;
       }
@@ -181,8 +181,8 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   margin-top: -1px;
-  max-height: 235px;
-  overflow-y: auto;
+  max-height: 275px;
+  // overflow-y: auto;
   position: absolute;
   top: 100%;
   z-index: 3;
@@ -197,6 +197,8 @@
   display: block;
   margin-top: 5px;
   border-radius: 5px;
+  // border-top-left-radius: 5px;
+  // border-top-right-radius: 5px;
 }
 
 .dropdownselect-form .option {
@@ -206,11 +208,27 @@
   display: block;
   padding: 8px 10px;
   margin-top: 3px;
+  margin-bottom: 3px;
 }
 
-.dropdownselect-form .option.selected,
+.dropdownselect-form .option.selected {
+  // background-color: #e8f0fe;
+  background-color: #edeff5;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .selected_text {
+    color: black;
+  }
+  .done_image {
+    height: 18px;
+    width: 18px;
+  }
+}
 .dropdownselect-form .option:hover {
-  background-color: #e8f0fe;
+  // background-color: #e8f0fe;
+  background-color: #f2f2ff;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -253,7 +271,8 @@
   padding-top: 10px;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #fff;
+  // background-color: #fff;
+  border-bottom: 1px solid #efefef;
   display: flex;
   align-items: center;
   .search_input {
@@ -276,9 +295,10 @@
   // padding-top: 10px;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #fff;
+  // background-color: #F7FAFF;
   display: flex;
   align-items: center;
+  border-top: 1px solid #efefef;
   // justify-content: center;
   .button_input {
     color: #276ef1;
@@ -292,24 +312,29 @@
     top: 12px;
     left: 14px;
     // left: 37%;
+  }
+}
 
+.input_close_image_container {
+  transition: ease 0.5s;
+  .input_close_image {
+    cursor: pointer;
+    position: absolute;
+    right: 19px;
+    height: 18px;
+    width: 18px;
+    top: 17px;
   }
-}
-.input_close_image {
-  cursor: pointer;
-  position: absolute;
-  right: 19px;
-  height: 18px;
-  width: 18px;
-  top: 17px;
   &:hover {
-    background-color: #e9e9eb;
+    background-color: #fff;
     border-radius: 50%;
-    // transition: 0.2s ease;
   }
 }
+
 .option_container {
   padding-left: 10px;
   padding-right: 10px;
   // padding-bottom: 10px;
+  overflow-y: auto;
+  max-height: 176px;
 }

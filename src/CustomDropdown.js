@@ -292,51 +292,61 @@ const CustomSearchableDropdown = (props) => {
               //
             />
             {query && (
-              <img
-                src={"/dropdown/close.svg"}
-                className="input_close_image"
-                onClick={(e) => {
-                  handleFetchData("");
-                  setQuery("");
-                }}
-              />
+              <div className="input_close_image_container">
+                <img
+                  src={"/dropdown/close.svg"}
+                  className="input_close_image"
+                  onClick={(e) => {
+                    handleFetchData("");
+                    setQuery("");
+                  }}
+                />
+              </div>
             )}
           </div>
-          <div className="option_container">
-            {isLoading ? (
-              <div style={{ textAlign: "center" }}>
-                <img src={`/dropdown/loader1.gif`} className="loader" />
-              </div>
-            ) : filter(data).length > 0 ? (
-              filter(data).map((option, index) => {
-                return (
-                  <div
-                    onClick={() => {
-                      handleClickOption(option);
-                      toggle();
-                    }}
-                    className={`option ${
-                      option.id === value ? "selected" : ""
-                    }`}
-                    key={`${id}-${index}`}
-                  >
-                    <div className="selected_text">{option[label]}</div>
-                    {option.id === value && (
-                      <img src="/dropdown/done.svg" className="done_image" />
-                    )}
-                  </div>
-                );
-              })
-            ) : (
-              <div className="nodata">No Data Found</div>
-            )}
-            {getValue(props, `add`, "") ? (
-              <div className="button_container">
-                <img src={"/dropdown/add.svg"} className="button_image" />
-                <p className="button_input">Add Button</p>
-              </div>
-            ) : null}
+          <div>
+            <div className="option_container">
+              {isLoading ? (
+                <div
+                  style={{
+                    textAlign: "center",
+                    marginTop: "10px",
+                    marginBottom: "5px",
+                  }}
+                >
+                  <img src={`/dropdown/loader1.gif`} className="loader" />
+                </div>
+              ) : filter(data).length > 0 ? (
+                filter(data).map((option, index) => {
+                  return (
+                    <div
+                      onClick={() => {
+                        handleClickOption(option);
+                        toggle();
+                      }}
+                      className={`option ${
+                        option.id === value ? "selected" : ""
+                      }`}
+                      key={`${id}-${index}`}
+                    >
+                      <div className="selected_text">{option[label]}</div>
+                      {option.id === value && (
+                        <img src="/dropdown/done.svg" className="done_image" />
+                      )}
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="nodata">No Data Found</div>
+              )}
+            </div>
           </div>
+          {getValue(props, `add`, "") ? (
+            <div className="button_container">
+              <img src={"/dropdown/add.svg"} className="button_image" />
+              <p className="button_input">Add Button</p>
+            </div>
+          ) : null}
         </div>
       </div>
     </>
