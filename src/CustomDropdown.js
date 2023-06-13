@@ -283,7 +283,7 @@ const CustomSearchableDropdown = (props) => {
               type="text"
               value={query}
               name="searchTerm"
-              autoComplete="new-password"
+              autoComplete="none"
               placeholder={getValue(props, `placeholder`, "search here...")}
               onChange={(e) => {
                 setQuery(e.target.value);
