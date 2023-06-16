@@ -83,7 +83,7 @@
   border: 1px solid #408dfb;
   // background: #f2f2ff;
   // outline: none;
-
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;  
   border-radius: 2px;
   box-sizing: border-box;
   padding: 8px 10px 8px 10px;
@@ -177,8 +177,8 @@
 .dropdownselect-form .options {
   display: none;
   background-color: #fff;
-  border: 1px solid #dadce0;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  // border: 1px solid #dadce0;
+  // box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   margin-top: -1px;
   max-height: 275px;
@@ -191,6 +191,7 @@
   font-size: 14px;
   font-weight: 500;
   color: black;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .dropdownselect-form .options.open {
@@ -213,7 +214,7 @@
 
 .dropdownselect-form .option.selected {
   // background-color: #e8f0fe;
-  background-color: #edeff5;
+  background-color: #f2f3ff;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -228,13 +229,15 @@
 }
 .dropdownselect-form .option:hover {
   // background-color: #e8f0fe;
-  background-color: #f2f2ff;
+  // background-color: #408dfb;
+  background-color: #f1f2f6;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   .selected_text {
     color: black;
+    font-weight: 500;
   }
   .done_image {
     height: 18px;
@@ -326,7 +329,7 @@
     top: 17px;
   }
   &:hover {
-    background-color: #fff;
+    background-color: #f2f2ff;
     border-radius: 50%;
   }
 }
@@ -334,7 +337,7 @@
 .option_container {
   padding-left: 10px;
   padding-right: 10px;
-  // padding-bottom: 10px;
+  padding-top: 10px;
   overflow-y: auto;
   max-height: 176px;
 }
